@@ -17,6 +17,7 @@
 enum ath79_mach_type {
 	ATH79_MACH_GENERIC_OF = -1,	/* Device tree board */
 	ATH79_MACH_GENERIC = 0,
+	ATH79_MACH_HP600N,			/* OpenRouter HP600N */
 	ATH79_MACH_A40,				/* OpenMesh A40 */
 	ATH79_MACH_A60,				/* OpenMesh A60 */
 	ATH79_MACH_WI2A_AC200I,			/* Nokia WI2A-AC200i */

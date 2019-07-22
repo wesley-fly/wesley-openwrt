@@ -172,6 +172,9 @@ tplink_board_detect() {
 	hwver=" v${hwver#0}"
 
 	case "$hwid" in
+	"600000"*)
+		model="OpenRouter HP600N"
+		;;
 	"001001"*)
 		model="TP-Link TL-MR10U"
 		;;
@@ -400,6 +403,9 @@ ar71xx_board_detect() {
 	machine=$(awk 'BEGIN{FS="[ \t]+:[ \t]"} /machine/ {print $2}' /proc/cpuinfo)
 
 	case "$machine" in
+	*"HP600N")
+		name="hp600n"
+		;;
 	*"A40")
 		name="a40"
 		;;

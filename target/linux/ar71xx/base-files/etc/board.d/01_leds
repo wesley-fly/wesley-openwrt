@@ -10,6 +10,11 @@ board_config_update
 board=$(board_name)
 
 case "$board" in
+hp600n)
+	ucidef_set_led_usbdev "usb" "USB" "hp600n:green:usb" "1-1"
+	ucidef_set_led_wlan "wlan2g" "WLAN2G" "hp600n:green:wlan2g" "phy0tpt"
+	ucidef_set_led_wlan "wlan5g" "WLAN5G" "hp600n:green:wlan5g" "phy1tpt"
+	;;
 a40)
 	ucidef_set_led_default "status-red" "Status (red)" "a40:red:status" "0"
 	ucidef_set_led_default "status-blue" "Status (blue)" "a40:blue:status" "0"

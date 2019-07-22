@@ -1,6 +1,5 @@
 include ./common-tp-link.mk
 
-
 define Device/archer-cxx
   KERNEL := kernel-bin | patch-cmdline | lzma | uImageArcher lzma
   IMAGES := sysupgrade.bin factory.bin
@@ -93,6 +92,16 @@ define Device/archer-c7-v1
   TPLINK_HWID := 0x75000001
 endef
 TARGET_DEVICES += archer-c7-v1
+
+define Device/hp600n
+$(Device/tplink-8mlzma)
+  DEVICE_TITLE := HP600N
+  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-usb-ledtrig-usbport
+  BOARDNAME = HP600N
+  DEVICE_PROFILE = HP600N
+  TPLINK_HWID := 0x60000001
+endef
+TARGET_DEVICES += hp600n
 
 define Device/archer-c7-v2
   $(Device/tplink-16mlzma)
